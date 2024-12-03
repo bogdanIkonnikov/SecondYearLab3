@@ -3,8 +3,8 @@ package first;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class WeightGoodsTest {
-    WeightGoods weightGoods = new WeightGoods("Name", "Description");
+public class WeightProductTest {
+    WeightProduct weightGoods = new WeightProduct("Name", "Description");
     @Test
     public void getNameTest(){
         Assertions.assertEquals("Name", weightGoods.getName());

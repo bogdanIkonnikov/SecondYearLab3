@@ -12,6 +12,4 @@ public class PackTest {
     public void getWeightTest(){
         Assertions.assertEquals(1, pack.getWeight());
     }
-
-
 }

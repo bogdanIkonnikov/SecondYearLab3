@@ -3,10 +3,10 @@ package first;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PackedWeightGoodsTest {
+public class PackedWeightProductTest {
     Pack pack = new Pack("name", 1);
-    WeightGoods weightGoods = new WeightGoods("name", "description");
-    PackedWeightGoods packedWeightGoods = new PackedWeightGoods(weightGoods, 30, pack);
+    WeightProduct weightGoods = new WeightProduct("name", "description");
+    PackedWeightProduct packedWeightGoods = new PackedWeightProduct(weightGoods, 30, pack);
 
     @Test
     public void getNetWeight(){

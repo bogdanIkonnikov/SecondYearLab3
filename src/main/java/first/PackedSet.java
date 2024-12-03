@@ -14,13 +14,13 @@ public class PackedSet {
             {
                 netWeight += ( (PackedSet) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedPieceGoods.class)
+            if (obj.getClass() == PackedPieceProduct.class)
             {
-                netWeight += ( (PackedPieceGoods) obj).getGrossWeight();
+                netWeight += ( (PackedPieceProduct) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedWeightGoods.class)
+            if (obj.getClass() == PackedWeightProduct.class)
             {
-                netWeight += ( (PackedWeightGoods) obj).getGrossWeight();
+                netWeight += ( (PackedWeightProduct) obj).getGrossWeight();
             }
         }
         return netWeight;
@@ -33,13 +33,13 @@ public class PackedSet {
             {
                 netWeight += ((PackedSet) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedPieceGoods.class)
+            if (obj.getClass() == PackedPieceProduct.class)
             {
-                netWeight += ((PackedPieceGoods) obj).getGrossWeight();
+                netWeight += ((PackedPieceProduct) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedWeightGoods.class)
+            if (obj.getClass() == PackedWeightProduct.class)
             {
-                netWeight += ((PackedWeightGoods) obj).getGrossWeight();
+                netWeight += ((PackedWeightProduct) obj).getGrossWeight();
             }
         }
         return netWeight;

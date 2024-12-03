@@ -1,8 +1,8 @@
 package first;
 
-public class PieceGoods extends Goods{
+public class PieceProduct extends Product {
     private final double weight;
-    public PieceGoods(String name, String description, double weight) {
+    public PieceProduct(String name, String description, double weight) {
         super(name, description);
         this.weight = weight;
     }

@@ -1,10 +1,10 @@
 package first;
 
-public class PackedPieceGoods extends PieceGoods{
+public class PackedPieceProduct extends PieceProduct {
     private final int quantity;
     private final Pack pack;
 
-    public PackedPieceGoods(PieceGoods pieceGoods, int quantity, Pack pack) {
+    public PackedPieceProduct(PieceProduct pieceGoods, int quantity, Pack pack) {
         super(pieceGoods.getName(), pieceGoods.getDescription(), pieceGoods.getWeight());
         this.quantity = quantity;
         this.pack = pack;

@@ -16,13 +16,13 @@ public class Consignment {
             {
                 weight += ((PackedSet) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedPieceGoods.class)
+            if (obj.getClass() == PackedPieceProduct.class)
             {
-                weight += ((PackedPieceGoods) obj).getGrossWeight();
+                weight += ((PackedPieceProduct) obj).getGrossWeight();
             }
-            if (obj.getClass() == PackedWeightGoods.class)
+            if (obj.getClass() == PackedWeightProduct.class)
             {
-                weight += ((PackedWeightGoods) obj).getGrossWeight();
+                weight += ((PackedWeightProduct) obj).getGrossWeight();
             }
         }
         return weight;

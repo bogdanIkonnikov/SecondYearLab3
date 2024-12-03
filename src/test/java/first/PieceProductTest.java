@@ -3,8 +3,8 @@ package first;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class PieceGoodsTest {
-    PieceGoods pieceGoods = new PieceGoods("Name", "Description", 23);
+public class PieceProductTest {
+    PieceProduct pieceGoods = new PieceProduct("Name", "Description", 23);
     @Test
     public void getNameTest(){
         Assertions.assertEquals("Name", pieceGoods.getName());

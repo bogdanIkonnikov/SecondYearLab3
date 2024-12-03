@@ -1,10 +1,10 @@
 package first;
 
-public class Goods {
+public class Product {
     private final String name;
     private final String description;
 
-    public Goods(String name, String description) {
+    public Product(String name, String description) {
         this.name = name;
         this.description = description;
     }
