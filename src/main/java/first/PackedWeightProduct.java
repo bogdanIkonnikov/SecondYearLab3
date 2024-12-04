@@ -1,6 +1,8 @@
 package first;
 
-public class PackedWeightProduct extends WeightProduct {
+import first.iface.Weightable;
+
+public class PackedWeightProduct extends WeightProduct implements Weightable {
     private final double weight;
     private final Pack pack;
 
@@ -9,9 +11,13 @@ public class PackedWeightProduct extends WeightProduct {
         this.weight = weight;
         this.pack = pack;
     }
+
+    @Override
     public double getNetWeight(){
         return weight;
     }
+
+    @Override
     public double getGrossWeight(){
         return weight + pack.getWeight();
     }

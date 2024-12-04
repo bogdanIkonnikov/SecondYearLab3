@@ -1,5 +1,6 @@
 package first;
 
+import first.iface.Weightable;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -13,13 +14,13 @@ public class PackedSetTest {
     PackedPieceProduct packedPieceProduct1 = new PackedPieceProduct(pieceProduct, 2, pack);
     PackedPieceProduct packedPieceProduct2 = new PackedPieceProduct(pieceProduct, 5, pack);
 
-    PackedSet packedSet1 = new PackedSet(new Object[]
+    PackedSet packedSet1 = new PackedSet(new Weightable[]
             {
             packedWeightProduct1, packedWeightProduct2,
             packedPieceProduct1, packedPieceProduct2
             },
             pack);
-    PackedSet packedSet2 = new PackedSet(new Object[]
+    PackedSet packedSet2 = new PackedSet(new Weightable[]
             {
                     packedSet1
             },

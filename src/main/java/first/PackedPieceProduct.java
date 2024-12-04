@@ -1,6 +1,8 @@
 package first;
 
-public class PackedPieceProduct extends PieceProduct {
+import first.iface.Weightable;
+
+public class PackedPieceProduct extends PieceProduct implements Weightable {
     private final int quantity;
     private final Pack pack;
 
@@ -10,14 +12,17 @@ public class PackedPieceProduct extends PieceProduct {
         this.pack = pack;
     }
 
-    public double getQuantity(){
+    public double getQuantity() {
         return quantity;
     }
-    public double getNetWeight(){
+
+    @Override
+    public double getNetWeight() {
         return quantity * this.getWeight();
     }
-    public double getGrossWeight(){
+
+    @Override
+    public double getGrossWeight() {
         return quantity * this.getWeight() + this.pack.getWeight();
     }
-
 }
