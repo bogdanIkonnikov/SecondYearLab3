@@ -1,17 +1,15 @@
 package second;
-
 import second.interfaces.filter;
 
-public class BeginStringFilter implements filter {
+public class EndStringFilter implements filter{
     private final String pattern;
 
-    public BeginStringFilter(String string) {
+    public EndStringFilter(String string) {
         pattern = string;
     }
 
     @Override
     public boolean apply(String str){
-        return str.startsWith(pattern);
+        return str.endsWith(pattern);
     }
-
 }
