@@ -1,8 +1,8 @@
 package second;
 
-import second.interfaces.filter;
+import second.interfaces.Filter;
 
-public class BeginStringFilter implements filter {
+public class BeginStringFilter implements Filter {
     private final String pattern;
 
     public BeginStringFilter(String string) {

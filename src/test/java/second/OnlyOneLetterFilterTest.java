@@ -7,6 +7,8 @@ public class OnlyOneLetterFilterTest {
     String string = "грызу 5 помидоров каждые 5 часов";
     OnlyOneLetterFilter filter1 = new OnlyOneLetterFilter('5');
     OnlyOneLetterFilter filter2 = new OnlyOneLetterFilter('г');
+    OnlyOneLetterFilter filter3 = new OnlyOneLetterFilter(' ');
+
 
     @Test
     public void char1Test(){
@@ -16,6 +18,11 @@ public class OnlyOneLetterFilterTest {
     @Test
     public void char2Test(){
         Assertions.assertTrue(filter2.apply(string)); // одна 'г' -> true
+    }
+
+    @Test
+    public void char3Test(){
+        Assertions.assertFalse(filter3.apply(string)); // одна 'г' -> true
     }
 
 

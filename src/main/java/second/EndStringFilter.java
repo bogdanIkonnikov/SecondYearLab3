@@ -1,7 +1,7 @@
 package second;
-import second.interfaces.filter;
+import second.interfaces.Filter;
 
-public class EndStringFilter implements filter{
+public class EndStringFilter implements Filter {
     private final String pattern;
 
     public EndStringFilter(String string) {

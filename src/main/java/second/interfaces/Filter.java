@@ -1,5 +1,5 @@
 package second.interfaces;
 
-public interface filter {
+public interface Filter {
     boolean apply(String string);
 }
