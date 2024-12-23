@@ -40,6 +40,7 @@ public class ProductServiceTest {
 
     Consignment consignment2 = new Consignment("1 весовой, 1 штучный, 1 набор", new Weightable[]
             {
+                    packedWeightProduct1,
                     packedPieceProduct2, //116
                     packedSet //216
             }, "sac");
@@ -64,7 +65,7 @@ public class ProductServiceTest {
 
     @Test
     public void CountByFilterDeep(){
-        Assertions.assertTrue(ProductService.countByFilterDeep(consignment2, filterFor2));
+        Assertions.assertEquals(2, ProductService.countByFilterDeep(consignment2, filterFor2));
     }
 
     @Test
@@ -72,5 +73,4 @@ public class ProductServiceTest {
         Assertions.assertFalse(ProductService.checkAllWeighted(consignment));
         Assertions.assertTrue(ProductService.checkAllWeighted(consignment3));
     }
-
 }

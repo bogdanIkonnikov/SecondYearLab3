@@ -3,7 +3,6 @@ package third;
 import first.Consignment;
 import first.PackedSet;
 import first.PackedWeightProduct;
-import first.WeightProduct;
 import first.iface.Weightable;
 import second.interfaces.Filter;
 
@@ -19,36 +18,37 @@ public class ProductService {
         return count;
     }
 
-    private static boolean countBFDSet(PackedSet packedSet, Filter filter){
+    private static boolean countBFDHelper(PackedSet packedSet, Filter filter){
         for (Weightable product : packedSet.getWeightables()) {
-            if (filter.apply(product.getName())) {
+            if (filter.apply(product.getName()) && !(product instanceof PackedSet)) {
                 return true;
             }
-            if (product.getClass() == PackedSet.class && countBFDSet((PackedSet) product, filter)){
+            if (product instanceof PackedSet && countBFDHelper((PackedSet) product, filter)){
                 return true;
             }
         }
         return false;
     }
 
-    public static boolean countByFilterDeep(Consignment consignment, Filter filter){
+    public static int countByFilterDeep(Consignment consignment, Filter filter){
+        int count = 0;
         for (Weightable product : consignment.getWeightables()) {
-            if (filter.apply(product.getName())) {
-                return true;
+            if (filter.apply(product.getName()) && !(product instanceof PackedSet)) {
+                count++;
             }
-            if (product.getClass() == PackedSet.class && countBFDSet((PackedSet) product, filter)){
-                return true;
+            if (product instanceof PackedSet && countBFDHelper((PackedSet) product, filter)){
+                count++;
             }
         }
-        return false;
+        return count;
     }
 
-    private static boolean cAllWeightedHelper(PackedSet packedSet){
+    private static boolean checkAllWeightedHelper(PackedSet packedSet){
         for (Weightable product : packedSet.getWeightables()) {
             if (product.getClass() != PackedWeightProduct.class && product.getClass() != PackedSet.class) {
                 return false;
             }
-            if (product.getClass() == PackedSet.class && !cAllWeightedHelper((PackedSet) product)){
+            if (product.getClass() == PackedSet.class && !checkAllWeightedHelper((PackedSet) product)){
                 return false;
             }
         }
@@ -57,10 +57,10 @@ public class ProductService {
 
     public static boolean checkAllWeighted(Consignment consignment){
         for (Weightable product : consignment.getWeightables()) {
-            if (product.getClass() != PackedWeightProduct.class && product.getClass() != PackedSet.class) {
+            if (!(product instanceof PackedWeightProduct) && !(product instanceof PackedSet)) {
                 return false;
             }
-            if (product.getClass() == PackedSet.class && (!cAllWeightedHelper((PackedSet) product))){
+            if (product instanceof PackedSet && (!checkAllWeightedHelper((PackedSet) product))){
                 return false;
             }
         }
